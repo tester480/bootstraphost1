@@ -1,38 +1,20 @@
 $(document).ready(function(){
-   
+   headerMobMenu();
 });
 
-function mobSearch() {
-   $(".search-mob__btn").on('click', function () {
-         var $parent = $(".header");
-         if ($parent.hasClass('mob-search')) {
-            $parent.removeClass('mob-search');
-         } else {
-            $parent.addClass('mob-search');
-         }
-   }); 
-   $(".wrapper").on('click', function(event) {
-      if (!$(event.target).closest(".search-mob__btn, .header__search").length) {
-         if ($(".header").hasClass("mob-search")) {
-            $(".header").removeClass("mob-search");
-         }
-      }
-   });
-}
-
 function headerMobMenu() {
-   $(".header__burger").on('click', function () {
-         var $parent = $(".header");
-         if ($parent.hasClass('header-menu')) {
-            $parent.removeClass('header-menu');
+   $(".nav-burger").on('click', function () {
+         var $parent = $("body");
+         if ($parent.hasClass('sidebar-mob')) {
+            $parent.removeClass('sidebar-mob');
          } else {
-            $parent.addClass('header-menu');
+            $parent.addClass('sidebar-mob');
          }
    }); 
    $(".wrapper").on('click', function(event) {
-      if (!$(event.target).closest(".header__burger, .header__menu-mob").length) {
-         if ($(".header").hasClass("header-menu")) {
-            $(".header").removeClass("header-menu");
+      if (!$(event.target).closest(".nav-burger, .sidebar").length) {
+         if ($("body").hasClass("sidebar-mob")) {
+            $("body").removeClass("sidebar-mob");
          }
       }
    });
